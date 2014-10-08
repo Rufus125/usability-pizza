@@ -20,3 +20,5 @@ GPLv3
 Eclipse IDE for webdev
 
 Jetbrains Webstorm http://www.jetbrains.com/webstorm/
+
+Netbeans https://netbeans.org/features/html5/
