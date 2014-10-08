@@ -1,0 +1,8 @@
+#summary HTML template page
+
+= Introduction =
+
+Documentation about the header template HTML file
+
+
+= Details =
