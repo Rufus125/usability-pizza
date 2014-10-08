@@ -2,7 +2,8 @@
 
 = Introduction =
 
-Documentation about the header template HTML file
+width: 170px;
+height: 168px;
 
 
 = Details =
