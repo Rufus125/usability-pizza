@@ -1,8 +1,8 @@
 #summary Main Page
 
-= Introduction =
+= Table of content =
 
-Add your content here.
+[HTMLTemplate]
 
 
 = Details =
