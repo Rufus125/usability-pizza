@@ -8,3 +8,6 @@ Add your content here.
 = Details =
 
 Todo: https://titanpad.com/dHSVlY11PP
+
+= License =
+GPLv3
