@@ -1,0 +1,62 @@
+/* CONTAINERS */
+
+body {
+	margin: 0 auto;
+}
+
+.bcontainer{
+	width: 1000px;
+	height: 100%;
+	border: 1px solid #000000;
+}
+
+
+/* HEADER */
+
+.header{
+	height: 300px;
+	width: 100%;
+	border: 1px solid #000000;
+	background-color: #ffffff;
+	border-top: 6px solid #FF6600;
+}
+
+.header .logo{
+	width: 150px;
+	height: 200px;
+	border: 1px solid #000000;
+	float: left;
+}
+
+.header .head{
+}
+
+
+/* NAV */
+
+.nav{
+	background-color: #FF6600;
+	width:100%;
+	height:50px;
+}
+
+
+/* MAIN BODY */
+
+.mainbody{
+
+}
+
+.mainbody .psearch{
+}
+
+.mainbody .map{
+}
+
+.footer{
+border-top: 6px solid #FF6600;
+}
+
+
+
+
