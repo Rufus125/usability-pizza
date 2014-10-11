@@ -1,0 +1,13 @@
+#summary Which assets do we need
+
+= Pictures =
+
+Logo
+Map
+Search (magnifying glass)
+
+= Text and lists =
+
+Postcodes
+Restaurant names + details
+Dishes + prices
