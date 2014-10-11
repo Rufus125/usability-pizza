@@ -2,12 +2,12 @@
 
 = Pictures =
 
-Logo
-Map
-Search (magnifying glass)
+Logo<br>
+Map<br>
+Search (magnifying glass)<br>
 
 = Text and lists =
 
-Postcodes
-Restaurant names + details
-Dishes + prices
+Postcodes  <br>
+Restaurant names + details  <br>
+Dishes + prices  <br>
