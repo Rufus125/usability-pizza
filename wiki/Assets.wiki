@@ -8,6 +8,6 @@ Search (magnifying glass)<br>
 
 = Text and lists =
 
-Postcodes  <br>
+[Postcodes]  <br>
 Restaurant names + details  <br>
 Dishes + prices  <br>
