@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/html">
 <head>
     <title>Usability pizza</title>
     <!--Header links -->
@@ -18,13 +18,27 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </head>
 <body>
+
 <script>
-    $(function() {
+    $(function () {
         $('#search_input').fastLiveFilter('#restaurant_list');
     });
 </script>
-<form action="dishes.html">
-    <input id="search_input" placeholder="Type to filter">
+
+<header>
+    <div class="logo">logo</div>
+</header>
+
+<nav>Current Postcode: EC1A
+    <form method="get" action="map.html">
+        <!--hidden label:postcode -->
+        <input type="submit" value="Re-enter postcode">
+    </form>
+</nav>
+
+<form method="get" action="dishes.html">
+    <div class="text">Refine your search with keywords</div>
+    <input type="text" id="search_input" placeholder="Type to filter" name="restaurant">
     <input type="submit">
 </form>
 <ul id="restaurant_list">

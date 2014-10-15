@@ -29,17 +29,17 @@
 
 <div id="wrapper">
 
-    <div id="header">
+    <header>
         <div class="logo">logo</div>
-    </div>
+    </header>
 
     <nav>What's available in your area?</nav>
 
     <div id="main-body">
         <div class="search">
             <div class="text">Enter your postcode</div>
-            <form action="restaurant-choice.html">
-                <input id="search_input" placeholder="Type to search">
+            <form method="get" action="restaurant-choice.html">
+                <input type="text" id="search_input" placeholder="Type to search" name="postcode">
                 <input type="submit">
             </form>
             <ul id="postcode_list">

@@ -19,17 +19,37 @@
 </head>
 <body>
 <script>
-    $(function() {
+    $(function () {
         $('#search_input').fastLiveFilter('#dishes_list');
     });
 </script>
 
+<header>
+    <div class="logo">logo</div>
+</header>
+
+<nav>Restaurant 1 Menu
+    <form method="get" action="restaurant-choice.html">
+        <!--hidden label: restaurant-->
+        <input type="submit" value="Back">
+    </form>
+</nav>
+<div id="search">
 <input id="search_input" placeholder="Type to filter">
 
 <ul id="dishes_list">
     <li>Pizza</li>
     <li>Pasta</li>
 </ul>
+</div>
+
+<div id="order">
+Your order:
+    <form method="get" action="map.html">
+        <input type="submit" value="Proceed">
+        <!--the actual list here -->
+    </form>
+</div>
 
 </body>
 </html>
