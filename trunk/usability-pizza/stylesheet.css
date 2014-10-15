@@ -1,3 +1,6 @@
+@import url('http://fonts.googleapis.com/css?family=Open+Sans');
+
+
 /* CONTAINERS */
 
 body {
@@ -7,10 +10,11 @@ body {
 #wrapper{
 	width: 900px;
 	height: 100%;
-	border: 2px solid grey;
+	border: 2px solid #CCCCCC;
 	margin: 0 auto;
 	overflow: none;
 	margin-top: 30px;
+	font-family: "Open Sans", sans-serif;
 }
 
 
@@ -20,15 +24,16 @@ body {
 	height: 130px;
 	width: 100%;
 	background-color: #ffffff;
-	border-top: 20px solid #FF6600;
+	border-top: 20px solid #FF7519;
 }
 
 #header .logo{
 	width: 150px;
 	height: 85px;
-	border: 2px solid grey;
+	border: 3px dotted grey;
 	float: left;
 	margin: 22px;
+	background-color: #CCCCCC;
 }
 
 
@@ -36,56 +41,85 @@ body {
 /* NAV */
 
 #nav{
-	background-color: #FF6600;
+	background-color: #FF7519;
 	height: 60px;
 	display: block;
 	font-size: 30px;
 	text-align: center;
 	clear: both;
-	line-height: 50px;
+	line-height: 55px;
+	color: #ffffff;
 }
 
 
 /* MAIN BODY */
 
 #main-body{
-min-height: 500px;
-padding: 30px;
-display: block;
-overflow: none;
+	min-height: 500px;
+	padding: 30px;
+	display: block;
+	overflow: none;
 }
 
 #main-body .search{
-padding: 10px;
-width: 300px;
-margin: 0 auto;
-border: 2px solid grey;
-margin-bottom: 50px;
-
+	padding: 10px;
+	width: 450px;
+	margin: 0 auto;
+	margin-bottom: 50px;
 }
 
-#main-body .search-box{
-display: inline-block; 
-width: 180px;
-
+#main-body .search .text{
+	width:100px;
+	display: inline-block;
+	color: #FF7519;
 }
 
-#main-body .search-button{
-display: inline-block; 
+#main-body .search .search_box{
+	display: inline; 
+	width: 170px;
+	border: 2px solid #FF7519;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	height: 30px;
+	padding: 0 10px;
+	top: 0;
+	color: #333333; 
+}
 
+#main-body .search  .search_button{
+	display: inline;
+	background-color:#FF7519;
+	-moz-border-radius:10px;
+	-webkit-border-radius:10px;
+	border-radius:10px;
+	border: 0px solid #ffffff;
+	cursor:pointer;
+	color:#ffffff;
+	font-size:17px;
+	height: 40px;
+	width: 100px;
+}
+
+#main-body .list{
+	display: block;
+	clear:both;
+	padding: 10px;
+border: 1px solid black;
+margin: 10px;
 }
 
 #main-body .map{
-margin:30px;
-width: 500px;
-height: 300px;
-margin: 0 auto;
-border: 2px solid grey;
+	margin:30px;
+	width: 500px;
+	height: 300px;
+	margin: 0 auto;
+	border: 2px solid grey;
 }
 
 #footer{
 height: 20px;
-background-color: #FF6600;
+background-color: #FF7519;
 }
 
 
