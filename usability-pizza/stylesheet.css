@@ -4,57 +4,88 @@ body {
 	margin: 0 auto;
 }
 
-.bcontainer{
-	width: 1000px;
+#wrapper{
+	width: 900px;
 	height: 100%;
-	border: 1px solid #000000;
+	border: 2px solid grey;
+	margin: 0 auto;
+	overflow: none;
+	margin-top: 30px;
 }
 
 
 /* HEADER */
 
-.header{
-	height: 300px;
+#header{
+	height: 130px;
 	width: 100%;
-	border: 1px solid #000000;
 	background-color: #ffffff;
-	border-top: 6px solid #FF6600;
+	border-top: 20px solid #FF6600;
 }
 
-.header .logo{
+#header .logo{
 	width: 150px;
-	height: 200px;
-	border: 1px solid #000000;
+	height: 85px;
+	border: 2px solid grey;
 	float: left;
+	margin: 22px;
 }
 
-.header .head{
-}
 
 
 /* NAV */
 
-.nav{
+#nav{
 	background-color: #FF6600;
-	width:100%;
-	height:50px;
+	height: 60px;
+	display: block;
+	font-size: 30px;
+	text-align: center;
+	clear: both;
+	line-height: 50px;
 }
 
 
 /* MAIN BODY */
 
-.mainbody{
+#main-body{
+min-height: 500px;
+padding: 30px;
+display: block;
+overflow: none;
+}
+
+#main-body .search{
+padding: 10px;
+width: 300px;
+margin: 0 auto;
+border: 2px solid grey;
+margin-bottom: 50px;
 
 }
 
-.mainbody .psearch{
+#main-body .search-box{
+display: inline-block; 
+width: 180px;
+
 }
 
-.mainbody .map{
+#main-body .search-button{
+display: inline-block; 
+
 }
 
-.footer{
-border-top: 6px solid #FF6600;
+#main-body .map{
+margin:30px;
+width: 500px;
+height: 300px;
+margin: 0 auto;
+border: 2px solid grey;
+}
+
+#footer{
+height: 20px;
+background-color: #FF6600;
 }
 
 
