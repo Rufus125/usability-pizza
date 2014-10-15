@@ -18,19 +18,15 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 </head>
 <body>
-<script>
-    $(function () {
-        $('#search_input').fastLiveFilter('#dishes_list');
-    });
-</script>
-
 <header>
     <div class="logo">logo</div>
 </header>
 
-<nav>Restaurant 1 Menu
+<nav>
+    <p id="restaurant-display">Please choose restaurant</p>
+    Menu
     <form method="get" action="restaurant-choice.html">
-        <!--hidden label: restaurant-->
+        <input type="hidden" name="restaurant" id="restaurant" value="">
         <input type="submit" value="Back">
     </form>
 </nav>
@@ -51,5 +47,35 @@ Your order:
     </form>
 </div>
 
+<div id="footer"></div>
 </body>
+
+<script>
+    $(function () {
+        $('#search_input').fastLiveFilter('#dishes_list');
+    });
+</script>
+
+<script>
+    function getQueryParams(qs) {
+        qs = qs.split("+").join(" ");
+        var params = {},
+                tokens,
+                re = /[?&]?([^=]+)=([^&]*)/g;
+
+        while (tokens = re.exec(qs)) {
+            params[decodeURIComponent(tokens[1])]
+                    = decodeURIComponent(tokens[2]);
+        }
+
+        return params;
+    }
+
+    var $_GET = getQueryParams(document.location.search);;
+    var restaurant = $_GET["restaurant"];
+    restaurant = restaurant.charAt(0).toUpperCase() + restaurant.substr(1);
+    $('#restaurant').val(restaurant);
+    $('#restaurant-display').text(restaurant);
+</script>
+
 </html>
