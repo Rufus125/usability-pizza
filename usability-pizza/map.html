@@ -21,12 +21,6 @@
 
 <body>
 
-<script>
-    $(function () {
-        $('#search_input').fastLiveFilter('#postcode_list');
-    });
-</script>
-
 <div id="wrapper">
 
     <header>
@@ -212,11 +206,36 @@
                 <li>WD: Watford</li>
             </ul>
         </div>
-        <div class="map">Map</div>
+        <img src="splashpage.png" alt="Map">
+       <!-- <div class="map">Map</div> -->
     </div>
-
     <div id="footer"></div>
 </div>
 
 </body>
+
+<script>
+    $(function () {
+        $('#search_input').fastLiveFilter('#postcode_list');
+    });
+</script>
+
+<script>
+    function getQueryParams(qs) {
+        qs = qs.split("+").join(" ");
+        var params = {},
+                tokens,
+                re = /[?&]?([^=]+)=([^&]*)/g;
+
+        while (tokens = re.exec(qs)) {
+            params[decodeURIComponent(tokens[1])]
+                    = decodeURIComponent(tokens[2]);
+        }
+
+        return params;
+    }
+    var $_GET = getQueryParams(document.location.search);
+    var postcode = $_GET["postcode"];
+    $('#search_input').val(postcode.toUpperCase());
+</script>
 </html> 

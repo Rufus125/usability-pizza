@@ -19,19 +19,13 @@
 </head>
 <body>
 
-<script>
-    $(function () {
-        $('#search_input').fastLiveFilter('#restaurant_list');
-    });
-</script>
-
 <header>
     <div class="logo">logo</div>
 </header>
 
-<nav>Current Postcode: EC1A
+<nav>Current Postcode: <p id="postcode-display">Please enter postcode</p>
     <form method="get" action="map.html">
-        <!--hidden label:postcode -->
+        <input type="hidden" name="postcode" id="postcode" value="">
         <input type="submit" value="Re-enter postcode">
     </form>
 </nav>
@@ -42,9 +36,39 @@
     <input type="submit">
 </form>
 <ul id="restaurant_list">
-    <li>Restaurant 1</li>
+    <li>
+        <img src="i-takeaway%20logo.png" alt="Map">
+        Restaurant 1
+    </li>
     <li>David</li>
 </ul>
-
+<div id="footer"></div>
 </body>
+
+<script>
+    $(function () {
+        $('#search_input').fastLiveFilter('#restaurant_list');
+    });
+</script>
+
+<script>
+    function getQueryParams(qs) {
+        qs = qs.split("+").join(" ");
+        var params = {},
+                tokens,
+                re = /[?&]?([^=]+)=([^&]*)/g;
+
+        while (tokens = re.exec(qs)) {
+            params[decodeURIComponent(tokens[1])]
+                    = decodeURIComponent(tokens[2]);
+        }
+
+        return params;
+    }
+
+    var $_GET = getQueryParams(document.location.search);
+    var postcode = $_GET["postcode"];
+    $('#postcode').val(postcode.toUpperCase());
+    $('#postcode-display').text(postcode.toUpperCase());
+</script>
 </html>
