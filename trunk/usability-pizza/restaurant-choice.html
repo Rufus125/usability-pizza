@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Usability pizza</title>
+    <!--Header links -->
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <!-- jQuery -->
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <!-- sort and filter -->
+    <script src="http://anthonybush.com/js/jquery.fastLiveFilter.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+<script>
+    $(function() {
+        $('#search_input').fastLiveFilter('#restaurant_list');
+    });
+</script>
+<form action="dishes.html">
+    <input id="search_input" placeholder="Type to filter">
+    <input type="submit">
+</form>
+<ul id="restaurant_list">
+    <li>Restaurant 1</li>
+    <li>David</li>
+</ul>
+
+</body>
+</html>
