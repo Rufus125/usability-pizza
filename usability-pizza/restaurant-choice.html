@@ -5,7 +5,7 @@
     <!--Header links -->
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
     <!-- jQuery -->
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <!-- sort and filter -->
     <script src="http://anthonybush.com/js/jquery.fastLiveFilter.js"></script>
     <!-- Latest compiled and minified CSS -->
@@ -36,11 +36,10 @@
     <input type="submit">
 </form>
 <ul id="restaurant_list">
-    <li>
+    <li><a href="#" onclick="copyToText(this);">Restaurant 1
         <img src="i-takeaway%20logo.png" alt="Map">
-        Restaurant 1
-    </li>
-    <li>David</li>
+    </a></li>
+    <li><a href="#" onclick="copyToText(this);">David</a></li>
 </ul>
 <div id="footer"></div>
 </body>
@@ -70,5 +69,13 @@
     var postcode = $_GET["postcode"];
     $('#postcode').val(postcode.toUpperCase());
     $('#postcode-display').text(postcode.toUpperCase());
+</script>
+
+<script>
+    function copyToText(listele) {
+        restaurant= listele.text.replace(/^\s+|\s+$/g, '');;
+        $('#search_input').val(restaurant);
+    }
+
 </script>
 </html>
