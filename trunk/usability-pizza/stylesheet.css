@@ -7,6 +7,10 @@ body {
 	margin: 0 auto;
 }
 
+#postcode_list{
+    display: none;
+}
+
 #wrapper{
 	width: 900px;
 	height: 100%;
