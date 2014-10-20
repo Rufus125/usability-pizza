@@ -24,14 +24,15 @@
 </header>
 
 <nav>Current Postcode: <p id="postcode-display">Please enter postcode</p>
-    <form method="get" action="map.html">
+    <form method="get" action="index.html">
         <input type="hidden" name="postcode" id="postcode" value="">
         <input type="submit" value="Re-enter postcode">
     </form>
 </nav>
 
 <form method="get" action="dishes.html">
-    <div class="text">Refine your search with keywords</div>
+
+    <label for="search_input">Refine your search with keywords</label>
     <input type="text" id="search_input" placeholder="Type to filter" name="restaurant">
     <input type="submit">
 </form>
