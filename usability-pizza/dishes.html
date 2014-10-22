@@ -35,8 +35,38 @@
 <input id="search_input" placeholder="Type to filter">
 
 <ul id="dishes_list">
-    <li><a href="#" onclick="copyToText(this);">Pizza</a></li>
-    <li><a href="#" onclick="copyToText(this);">Pasta</a></li>
+    <li><a href="#" onclick="copyToText(this);">Pizza</a>
+        <span class="input-group-btn">
+              <button type="button" class="btn btn-default btn-number" disabled data-type="minus" data-field="pizzaNum">
+                  <span class="glyphicon glyphicon-minus"></span>
+              </button>
+          </span>
+        <input type="number" class="input-number" name="pizzaNum" value="0" min="0" max="20">
+                <span class="input-group-btn">
+              <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="pizzaNum">
+                  <span class="glyphicon glyphicon-plus"></span>
+              </button>
+              <button type="button" class="btn btn-default btn-number" data-type="remove" data-field="pizzaNum">
+                  <span class="glyphicon glyphicon-remove"></span>
+              </button>
+          </span>
+    </li>
+    <li><a href="#" onclick="copyToText(this);">Pasta</a>
+     <span class="input-group-btn">
+              <button type="button" class="btn btn-default btn-number" disabled data-type="minus" data-field="pastaNum">
+                  <span class="glyphicon glyphicon-minus"></span>
+              </button>
+          </span>
+        <input type="number" class="input-number" name="pastaNum" value="0" min="0" max="20">
+                <span class="input-group-btn">
+              <button type="button" class="btn btn-default btn-number" data-type="plus" data-field="pastaNum">
+                  <span class="glyphicon glyphicon-plus"></span>
+              </button>
+              <button type="button" class="btn btn-default btn-number" data-type="remove" data-field="pastaNum">
+                  <span class="glyphicon glyphicon-remove"></span>
+              </button>
+          </span>
+    </li>
 </ul>
 </div>
 
@@ -74,9 +104,11 @@ Your order:
 
     var $_GET = getQueryParams(document.location.search);;
     var restaurant = $_GET["restaurant"];
-    restaurant = restaurant.charAt(0).toUpperCase() + restaurant.substr(1);
-    $('#restaurant').val(restaurant);
-    $('#restaurant-display').text(restaurant);
+    if(restaurant != undefined) {
+        restaurant = restaurant.charAt(0).toUpperCase() + restaurant.substr(1);
+        $('#restaurant').val(restaurant);
+        $('#restaurant-display').text(restaurant);
+    }
 </script>
 
 <script>
@@ -84,6 +116,81 @@ Your order:
         dish= listele.text.replace(/^\s+|\s+$/g, '');;
         $('#search_input').val(dish);
     }
+
+</script>
+
+<script>
+    $('.btn-number').click(function(e){
+        e.preventDefault();
+
+        var fieldName = $(this).attr('data-field');
+        var type      = $(this).attr('data-type');
+        var input = $("input[name='"+fieldName+"']");
+        var currentVal = parseInt(input.val());
+        if (!isNaN(currentVal)) {
+            if(type == 'minus') {
+
+                if(currentVal > input.attr('min')) {
+                    input.val(currentVal - 1).change();
+                }
+                if(parseInt(input.val()) == input.attr('min')) {
+                    $(this).attr('disabled', true);
+                }
+            }
+                if(type == 'remove') {
+                    input.val(0).change();
+                    var buttons =  $('.btn-number');
+                    for ( var i = 0; i < buttons.length; i++ ) {
+                        var button = buttons[i];
+                        if (button.getAttribute('data-field') == fieldName) {
+                            if (button.getAttribute('data-type') == 'minus') {
+                                button.setAttribute('disabled', true);
+                            }
+                        }
+                    }
+                    /*
+                     <button type="button" class="btn btn-default btn-number" disabled data-type="minus" data-field="pastaNum">
+                     <span class="glyphicon glyphicon-minus"></span>
+                     </button>
+                     */
+                }
+
+             else if(type == 'plus') {
+                if(currentVal < input.attr('max')) {
+                    $(this).attr('disabled', false);
+                    input.val(currentVal + 1).change();
+                }
+                if(parseInt(input.val()) == input.attr('max')) {
+                }
+
+            }
+        } else {
+            input.val(0);
+        }
+    });
+
+    $('.input-number').change(function() {
+        minValue =  parseInt($(this).attr('min'));
+        maxValue =  parseInt($(this).attr('max'));
+        valueCurrent = parseInt($(this).val());
+
+        name = $(this).attr('name');
+        if(valueCurrent >= minValue) {
+            $(".btn-number[data-type='minus'][data-field='"+name+"']").removeAttr('disabled')
+        } else {
+            alert('Sorry, the minimum value was reached');
+            $(this).val($(this).data('oldValue'));
+        }
+        if(valueCurrent <= maxValue) {
+            $(".btn-number[data-type='plus'][data-field='"+name+"']").removeAttr('disabled')
+        } else {
+            alert('Sorry, the maximum value was reached');
+            $(this).val($(this).data('oldValue'));
+        }
+
+
+    });
+
 
 </script>
 </html>

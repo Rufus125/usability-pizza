@@ -77,8 +77,10 @@
 
     var $_GET = getQueryParams(document.location.search);
     var postcode = $_GET["postcode"];
-    $('#postcode').val(postcode.toUpperCase());
-    $('#postcode-display').text(postcode.toUpperCase());
+    if(restaurant != undefined) {
+        $('#postcode').val(postcode.toUpperCase());
+        $('#postcode-display').text(postcode.toUpperCase());
+    }
 </script>
 
 <script>
