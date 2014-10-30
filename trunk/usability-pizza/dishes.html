@@ -5,9 +5,9 @@
     <!--Header links -->
     <link rel="stylesheet" type="text/css" href="stylesheet.css">
     <!-- jQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="jquery.min.js"></script>
     <!-- sort and filter -->
-    <script src="http://anthonybush.com/js/jquery.fastLiveFilter.js"></script>
+    <script src="jquery.fastLiveFilter.js"></script>
     <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 
@@ -34,7 +34,7 @@
     </form>
 </nav>
 <div id="search">
-<input id="search_input" placeholder="Type to filter">
+<input type="search" id="search_input" placeholder="Type to filter">
 
 <ul id="dishes_list">
     <li><a href="#" onclick="copyToText(this);">Pizza</a>
@@ -71,14 +71,11 @@
     </li>
 </ul>
 </div>
-
-<div id="order">
-Your order:
     <form method="get" action="index.html">
+        Total price: <span id="total">0.00</span><br/>
         <input type="submit" value="Proceed">
         <!--the actual list here -->
     </form>
-</div>
 
 <div id="footer"></div>
 </body>
@@ -139,7 +136,7 @@ Your order:
                     $(this).attr('disabled', true);
                 }
             }
-                if(type == 'remove') {
+            else  if(type == 'remove') {
                     input.val(0).change();
                     var buttons =  $('.btn-number');
                     for ( var i = 0; i < buttons.length; i++ ) {
@@ -156,7 +153,6 @@ Your order:
                      </button>
                      */
                 }
-
              else if(type == 'plus') {
                 if(currentVal < input.attr('max')) {
                     $(this).attr('disabled', false);
@@ -169,6 +165,23 @@ Your order:
         } else {
             input.val(0);
         }
+        var sum=0.00;
+        //recalculate the price in total so that the price is up to date
+        /*
+        iterate over each list item
+          get price and count
+          add to total sum
+        set total sum.
+         */
+        $( "#dishes_list li" ).each(function() {
+            var number = $(this).children('input').val();
+            number = parseInt(number);
+            //var amount = $(this).children('').val();
+            // amount =  = parseInt(amount);
+            var amount = 2;
+            sum = sum+ number * amount;
+        });
+        $( "#total" ).text(sum.toFixed(2));
     });
 
     $('.input-number').change(function() {

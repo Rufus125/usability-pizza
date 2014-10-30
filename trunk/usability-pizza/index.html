@@ -35,7 +35,8 @@
             <label for="search_input">Enter your postcode</label>
             <form method="get" action="restaurant-choice.html">
                 <div class="ui-widget">
-                    <input type="text" id="search_input" size="50" placeholder="Type to search" name="postcode">
+                    <input type="search" id="search_input" size="50" placeholder="Type to search" name="postcode">
+                    <p id="empty-message"></p>
                     <input type="submit" id="search_button">
                 </div>
             </form>
@@ -245,6 +246,13 @@
         var postcodes = $('#postcode_list li').map(function(){return $.text([this])});
         postcodes = jQuery.makeArray( postcodes );
         $( "#search_input" ).autocomplete({
+            response: function(event, ui) {
+                if (ui.content.length === 0) {
+                    $("#empty-message").text("No results found");
+                } else {
+                    $("#empty-message").empty();
+                }
+            },
             source: postcodes,
             change: function( event, ui ) {
                 val = $(this).val();

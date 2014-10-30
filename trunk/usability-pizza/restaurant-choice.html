@@ -35,7 +35,7 @@
 <form method="get" action="dishes.html">
 
     <label for="search_input">Refine your search with keywords</label>
-    <input type="text" id="search_input" placeholder="Type to filter" name="restaurant">
+    <input type="search"  id="search_input" placeholder="Type to filter" name="restaurant">
     <input type="submit">
 </form>
 <ul id="restaurant_list">
@@ -86,8 +86,9 @@
 
 <script>
     function copyToText(listele) {
-        restaurant= listele.text.replace(/^\s+|\s+$/g, '');;
-        $('#search_input').val(restaurant);
+        var restaurant= listele.text.replace(/^\s+|\s+$/g, '');
+        //$('#search_input').val(restaurant);
+        window.location.href = "dishes.html?restaurant=" + restaurant;
     }
 
 </script>
