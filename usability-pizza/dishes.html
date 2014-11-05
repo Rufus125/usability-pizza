@@ -76,15 +76,15 @@
     <table>
         <tr>
             <td>Food charge:</td>
-            <td><span id="food">&pound; 0.00</span></td>
+            <td class="right"><span id="food">&pound; 0.00</span></td>
         </tr>
         <tr>
             <td>Delivery charge:</td>
-            <td><span id="delivery">&pound; 2.00</span></td>
+            <td class="right"><span id="delivery">&pound; 2.00</span></td>
         </tr>
         <tr>
             <td>Total price:</td>
-            <td><span id="total">&pound; 0.00</span></td>
+            <td class="right"><span id="total">&pound; 0.00</span></td>
         </tr>
     </table>
     <input type="submit" value="Proceed">
@@ -199,7 +199,7 @@
         });
         $("#food").text("£ " + sum.toFixed(2));
         if (sum > 15) {
-            $("#delivery").text("&pound; 0.00");
+            $("#delivery").text("£ 0.00");
         } else if (sum == 0) {
 
         } else {
