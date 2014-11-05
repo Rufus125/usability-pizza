@@ -30,7 +30,7 @@
 		</div>
 	</header>
 
-	<nav>Current Postcode:
+	<nav><span id="postcode-display">Please enter postcode</span>
 		<form method="get" action="index.html">
 			<input type="hidden" name="postcode" id="postcode" value="">
 			<input class="button" type="submit" value="Re-enter postcode">
@@ -93,7 +93,8 @@
     var postcode = $_GET["postcode"];
     if(postcode != undefined) {
         $('#postcode').val(postcode.toUpperCase());
-        $('#postcode-display').text(postcode.toUpperCase());
+        postcode = "Current Postcode: " + postcode.split(":")[0];
+        $('#postcode-display').text(postcode);
     }
     var restaurant = $_GET["restaurant"];
     if(restaurant != undefined) {
