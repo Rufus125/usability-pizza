@@ -91,9 +91,13 @@
 
     var $_GET = getQueryParams(document.location.search);
     var postcode = $_GET["postcode"];
-    if(restaurant != undefined) {
+    if(postcode != undefined) {
         $('#postcode').val(postcode.toUpperCase());
         $('#postcode-display').text(postcode.toUpperCase());
+    }
+    var restaurant = $_GET["restaurant"];
+    if(restaurant != undefined) {
+        $('#search_input').val(restaurant);
     }
 </script>
 
