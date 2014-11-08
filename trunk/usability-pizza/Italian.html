@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<meta charset="utf-16">
+<html>
+<head>
+    <title>Usability pizza</title>
+    <!--Header links -->
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <!-- jQuery -->
+    <script src="jquery.min.js"></script>
+    <!-- sort and filter -->
+    <script src="jquery.fastLiveFilter.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="bootstrap.min.js"></script>
+</head>
+<body>
+
+<div id="wrapper">
+<header>
+    <!--<div class="logo">logo</div>-->
+    <a href="index.html">
+        <img src="i-takeaway%20logo.png" alt="Logo i-Takeaway">
+    </a>
+</header>
+
+<nav>
+    <p id="restaurant-display">Please choose restaurant</p>
+    <form method="get" action="restaurant-choice.html">
+        <input type="hidden" name="restaurant" id="restaurant" value="">
+        <input class="button" type="submit" value="Back">
+    </form>
+</nav>
+<div id="search">
+    <input type="search" id="search_input" placeholder="Type to filter">
+</div>
+
+    <form method="get" action="index.html">
+	<table class="menu-table" id="italian-table">
+	
+    <tr><td>search bar placeholder</td><td>your order</td></tr>	
+	<tr><td></td><td></td></tr>
+	<tr><td></td><td></td></tr>
+	<tr><td></td><td></td></tr>
+	<tr><td></td><td></td></tr>
+	<tr><td></td><td></td></tr>
+	<tr><td></td><td></td></tr>
+	<tr><td></td><td></td></tr>
+	<tr><td></td><td></td></tr>
+	<tr><td></td><td></td></tr>
+	<tr><td></td><td></td></tr>	
+	<tr><td></td><td></form>
+    <table>
+        <tr>
+            <td>Food charge:</td>
+            <td class="right"><span id="food">&pound; 0.00</span></td>
+        </tr>
+        <tr>
+            <td>Delivery charge:</td>
+            <td class="right"><span id="delivery">&pound; 2.00</span></td>
+        </tr>
+        <tr>
+            <td>Total price:</td>
+            <td class="right"><span id="total">&pound; 0.00</span></td>
+        </tr>
+    </table>
+        <input type="checkbox" name="tandc" id="tandc" required="true"><label for="tandc"> Terms and Conditions </label><br/>
+    <input type="submit" value="Proceed"></td></tr>
+</table>
+
+<div id="footer"></div>
+   </div>
+</body>
+
+<script>
+var dishLst = ['Pollo Alle Milanese','Pollo Pizziola','Pollo Toscana','Pollo Boscaiola','Pollo Alla Duchessa','Pollo Valdostana','Beef Stronganoff','Agnello Alla Cacciatora','Medaglioni Di Maiale','Filetto Di Cernia'];
+var dishPrice = [10.95,11.50,12.95,13.50,14.50,14.50,15.95,16.95,13.95,15.75];
+var dishTotal = [0,0,0,0,0,0,0,0,0,0];
+var totalPrice = [0,0,0,0,0,0,0,0,0,0];
+var deliveryPrice = 2;
+
+window.onload = setMenuTable();
+
+function setMenuTable(){
+
+for (i = 0; i < dishLst.length; i++){
+$('#italian-table tr:eq('+(i+1)+') td:eq(0)').html(
+"<span class='dish-name'>"+dishLst[i]+"</span><span class='price-text'>"+dishPrice[i].toFixed(2)+"</span><span class='add-dish'><button type='button' class='btn btn-order' onclick='addDish("+[i]+")'><span class='glyphicon glyphicon-plus symbol-style'></span>")
+}
+}
+
+function clearDish(dish){
+dishTotal[dish] = 0;
+totalPrice[dish] = 0;
+var dishP = dish+1;
+$('#italian-table tr:eq('+(dishP)+') td:eq(1)').html('');
+
+updatePriceFooter()
+}
+
+function addDish(dish){
+var btnHtml = "<span class='add-dish'><button type='button' class='btn btn-order' onclick='clearDish("+dish+")'><span class='glyphicon glyphicon-remove symbol-style'></button></span>";
+var dishP = dish+1;
+dishTotal[dish] ++;
+totalPrice[dish] = dishPrice[dish]*dishTotal[dish];
+
+$('#italian-table tr:eq('+(dishP)+') td:eq(1)').html('<span class="dish-name">'+dishLst[dish]+' x '+dishTotal[dish]+' = £ '+totalPrice[dish].toFixed(2) +'</span>'+ btnHtml);
+
+updatePriceFooter()
+}
+
+function updatePriceFooter(){
+var totalFoodPrice = 0;
+var finalPrice = 0;
+for (i = 0; i < totalPrice.length; i++){
+totalFoodPrice = totalFoodPrice + totalPrice[i];}
+
+if (totalFoodPrice == 0){finalPrice=0} else {finalPrice = totalFoodPrice + deliveryPrice;}
+$("#food").html("£ " + totalFoodPrice.toFixed(2));
+$("#total").html("£ " + finalPrice.toFixed(2));
+}
+
+</script>
+
+<script>
+    $(function () {
+        $('#search_input').fastLiveFilter('#dishes_list');
+    });
+</script>
+
+<script>
+    function getQueryParams(qs) {
+        qs = qs.split("+").join(" ");
+        var params = {},
+                tokens,
+                re = /[?&]?([^=]+)=([^&]*)/g;
+
+        while (tokens = re.exec(qs)) {
+            params[decodeURIComponent(tokens[1])]
+                    = decodeURIComponent(tokens[2]);
+        }
+
+        return params;
+    }
+
+    var $_GET = getQueryParams(document.location.search);
+    ;
+    var restaurant = $_GET["restaurant"];
+    if (restaurant != undefined) {
+        restaurant = restaurant.charAt(0).toUpperCase() + restaurant.substr(1);
+        $('#restaurant').val(restaurant);
+        $('#restaurant-display').text(restaurant);
+    }
+</script>
+</html>
