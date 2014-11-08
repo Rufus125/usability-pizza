@@ -301,6 +301,63 @@ display: block-inline;
 
 }
 
+/*menu classes*/
+.menu-table{
+width:85%;
+margin-left: 5%;
+background-color: #FEEEA4;
+}
+
+.menu-table td{
+padding: 5px;
+}
+
+.menu-table tr td:nth-child(odd){
+background-color: #D9D9D9;
+width: 50%;
+}
+
+.menu-table tr td:nth-child(even){
+background-color: #BFBFBF;
+
+}
+
+.dish-name{
+float: left;
+margin-right: 30px;
+margin-left: 30px;
+}
+
+.price-text{
+float: left;
+margin-right: 30px;
+}
+
+.add-dish{
+float: right;
+margin-right: 30px;
+}
+
+.btn-order{
+background-color: #e87925;
+border: 2px solid #ca6317;
+border-radius: 4px;
+}
+
+.btn-cancel{
+background-color: #e87925;
+border: 2px solid #ca6317;
+border-radius: 4px;
+
+}
+
+.symbol-style{
+color: white;
+font-size: large;
+text-align: center;
+}
+
+
 
 /* footer */
 
