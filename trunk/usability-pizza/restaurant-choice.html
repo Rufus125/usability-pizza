@@ -45,24 +45,24 @@
 	</form>
 
 	<ul id="restaurant_list">
-		<li><a href="#" onclick="copyToText(this);">
+		<li><a href="#" onclick="copyToText(this,0);">
 			<img src="azure%20tiger.png">
 			Azure Tiger
 		</a></li>
-		<li><a href="#" onclick="copyToText(this);">
+		<li><a href="#" onclick="copyToText(this,1);">
 			<img src="pizzeria.png">
 			Mama's Pizzeria
 		</a></li>
-		<li><a href="#" onclick="copyToText(this);">
+		<li><a href="#" onclick="copyToText(this,2);">
 			<img src="sushibox.png">
 			Sushibox
 		</a></li>
-		<li><a href="#" onclick="copyToText(this);">
+		<li><a href="#" onclick="copyToText(this,3);">
 			<img src="wok.png">
 			Vermillion Takeaway
 		</a></li>
 	</ul>
-	
+   
 	<div id="footer"></div>
 	
 </body>
@@ -103,10 +103,24 @@
 </script>
 
 <script>
-    function copyToText(listele) {
+    function copyToText(listele,menuSet) {
         var restaurant= listele.text.replace(/^\s+|\s+$/g, '');
-        //$('#search_input').val(restaurant);
-        window.location.href = "dishes.html?restaurant=" + restaurant;
+        //$('#search_input').val(restaurant
+		
+		switch (menuSet){
+		case 0:
+			window.location.href = "indian.html?restaurant=" + restaurant;
+			break;
+		case 1:
+		    window.location.href = "Italian.html?restaurant=" + restaurant;
+			break;
+		case 2:
+		    window.location.href = "japanese.html?restaurant=" + restaurant;
+			break;
+		case 3:
+		    window.location.href = "chinese.html?restaurant=" + restaurant;
+			break;
+		}
     }
 
 </script>
