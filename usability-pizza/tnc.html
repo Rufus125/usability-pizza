@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<meta charset="utf-16">
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Usability pizza</title>
+    <!--Header links -->
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <!-- jQuery -->
+    <script src="jquery.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+    <script src="jquery-ui.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="bootstrap.min.js"></script>
+</head>
+
+<body>
+
+<div id="wrapper">
+
+    <header>
+		<div class="top_bar"></div>
+		<div class="mid_container">
+			<div class="logo"><img src="i-takeaway%20logo.png" alt="Logo i-Takeaway"></div>
+		</div>
+	</header>
+
+    <nav>Terms and conditions</nav>
+
+    <div id="main-body">
+        <P STYLE="margin-bottom: 0.35cm"><B>About us</B></P>
+        <P STYLE="margin-bottom: 0.35cm">Opened in 2014, I-takeaway is a
+            casual fine online take away, offering Indian, Chinese, Japanese and
+            Italian dishes. Also a warm hospitality on our online website, on our
+            website we allow you to enter your location and find your nearest
+            take away’ of four different types of top cuisines. A simple
+            website with an easy to use layout which anyone can use. Our terms
+            and conditions also apply, we specialize in four course tasting
+            menus, allowing the customer to select any dishes from the menu
+            £10.00 for free local deliveries. However if the order is less than
+            £10.00 there is a delivery charge for £3.99. We follow our policies
+            strictly and provide our best service.</P>
+        <P STYLE="margin-bottom: 0.35cm"><FONT COLOR="#0070c0"><FONT SIZE=3><B>Terms
+            and Conditions</B></FONT></FONT></P>
+        <P STYLE="margin-bottom: 0.35cm">I-Take Away offers free delivery if
+            your order is over £10.00 if your order is under this then they will
+            be a £3.99 charge. These orders can be delivered too many areas
+            throughout London. If you are not in our delivery area radius you
+            cannot get a delivery.</P>
+        <P STYLE="margin-bottom: 0.35cm"><FONT SIZE=3><U><B>Payment</B></U></FONT></P>
+        <P STYLE="margin-bottom: 0.35cm">Our delivery drivers will carry up
+            to £10 in change, payment must be in £ sterling. If you don’t
+            want to pay by cash our drivers will have PayPal machines which you
+            could use to pay and below you can find which types of cards we
+            accept</P>
+        <P STYLE="margin-bottom: 0.35cm">We accept the following forms of
+            payment:</P>
+        <UL>
+            <LI><P STYLE="margin-bottom: 0.35cm">Cash</P>
+            <LI><P STYLE="margin-bottom: 0.35cm">Credit / Charge cards: Visa and
+                MasterCard are accepted.</P>
+            <LI><P STYLE="margin-bottom: 0.35cm">Debit Cards, such as Delta or
+                Switch are accepted.</P>
+        </UL>
+        <P STYLE="margin-bottom: 0.35cm"><FONT SIZE=3><U><B>PRODUCT TERMS AND
+            CONDITION</B></U></FONT><U><B>S</B></U></P>
+        <UL>
+            <LI><P STYLE="margin-bottom: 0.35cm">These set of words and
+                expressions have the following definitions in these PRODUCT Terms
+                and Conditions;</P>
+            <LI><P STYLE="margin-bottom: 0.35cm">You, Your, The Customer: Means
+                you, the Customer who purchases I-Takeaway;</P>
+            <LI><P STYLE="margin-bottom: 0.35cm">The Products: These are the
+                Products that the customer receives and are supplied by I-Takeaway</P>
+            <LI><P STYLE="margin-bottom: 0.35cm">The Website: The website of
+                I-Takeaway</P>
+        </UL>
+        <P STYLE="margin-bottom: 0.35cm"><FONT SIZE=3><U><B>LAW</B></U></FONT></P>
+        <UL>
+            <LI><P STYLE="margin-bottom: 0.35cm">Where these Conditions apply,
+                any contract shall be in accordance with the laws of England ruled
+                by and assembled as I-Takeaway and the Customer submit to the
+                jurisdiction that is non-exclusive of the Courts of England.</P>
+        </UL>
+        <P STYLE="margin-bottom: 0.35cm"><A NAME="_GoBack"></A><BR><BR>
+        </P>
+        <P STYLE="margin-bottom: 0.35cm">Copyright I-Takeaway UK 2014. All
+            rights reserved.</P>
+    </div>
+    
+	<div id="footer">
+		<div class="bottom_bar"></div>
+	</div>
+	
+</div>
+
+</body>
+
+<script>
+    function getQueryParams(qs) {
+        qs = qs.split("+").join(" ");
+        var params = {},
+                tokens,
+                re = /[?&]?([^=]+)=([^&]*)/g;
+
+        while (tokens = re.exec(qs)) {
+            params[decodeURIComponent(tokens[1])]
+                    = decodeURIComponent(tokens[2]);
+        }
+
+        return params;
+    }
+    var $_GET = getQueryParams(document.location.search);
+    var postcode = $_GET["postcode"];
+    if(postcode != undefined){
+        $('#search_input').val(postcode.toUpperCase());
+    }
+</script>
+
+<script>
+    $(function() {
+        var postcodes = $('#postcode_list li').map(function(){return $.text([this])});
+        postcodes = jQuery.makeArray( postcodes );
+        $( "#search_input" ).autocomplete({
+            response: function(event, ui) {
+                if (ui.content.length === 0) {
+                    $("#empty-message").text("No results found");
+                } else {
+                    $("#empty-message").empty();
+                }
+            },
+            source: postcodes,
+            change: function( event, ui ) {
+                val = $(this).val();
+                exists = $.inArray(val,postcodes);
+                if (exists<0) {
+                    $(this).val("");
+                    return false;
+                }
+            }
+        });
+    });
+</script>
+
+</html>
