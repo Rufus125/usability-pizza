@@ -264,8 +264,19 @@
             source: postcodes,
             change: function( event, ui ) {
                 val = $(this).val();
-                exists = $.inArray(val,postcodes);
-                if (exists<0) {
+                //exists = $.inArray(val,postcodes);
+                if(val==null){
+                val="";
+                }
+                var matchString = val;
+                var rslt = null;
+                $.each(postcodes, function(index, value) {
+                  if (rslt == null && value.toLowerCase() ===matchString.toLowerCase()) {
+                    rslt = index;
+                    return false;
+                  }
+                });
+                if (rslt == null) {
                     $(this).val("");
                     return false;
                 }

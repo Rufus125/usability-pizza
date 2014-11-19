@@ -12,6 +12,11 @@ body {
 
 
 
+.ui-menu .ui-menu-item{
+font-family: "Times New Roman", cursive, sans-serif;
+}
+
+
 
 #postcode_list > ul > li {font-family: "Times New Roman", Times, serif;}
 

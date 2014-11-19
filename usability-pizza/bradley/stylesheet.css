@@ -10,8 +10,9 @@ body {
 #restaurant_list, .searchbox, #postcode-display, #postcode_list,.button, .labeltext, #search_input,.orline,.selectline,.tdHeader, #restaurant-display, .tdHeader, .TimesNewRoman,
 .areaf, .timesNewRoman,  .verdana, .list, .termCondition, .conditiontitle, .menu-table{font-family: "Bradley Hand ITC", cursive, sans-serif;}
 
-
-
+.ui-menu .ui-menu-item{
+font-family: "Bradley Hand ITC", cursive, sans-serif;
+}
 
 #postcode_list > ul > li {font-family: "Bradley Hand ITC", cursive, sans-serif;}
 
