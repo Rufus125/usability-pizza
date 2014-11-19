@@ -11,6 +11,10 @@ body {
 .areaf, .timesNewRoman,  .verdana, .list, .termCondition, .conditiontitle, .menu-table{font-family: "Lucinda Sans", cursive, sans-serif;}
 
 
+.ui-menu .ui-menu-item{
+font-family: "Lucinda Sans", cursive, sans-serif;
+}
+
 
 
 #postcode_list > ul > li {font-family: "Lucinda Sans", cursive, sans-serif;}
