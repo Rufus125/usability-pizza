@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<meta charset="utf-16">
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Usability pizza</title>
+    <!--Header links -->   <!-- updated by zak. Switch buttions -->
+    <link rel="stylesheet" type="text/css" href="stylesheet.css" 	title="Style1">
+    <script src="switchcss.js"></script>
+    <!--Ends here -->
+    
+    
+    <!-- jQuery -->
+    <script src="jquery.min.js"></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.11.2/themes/smoothness/jquery-ui.css">
+    <script src="jquery-ui.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="bootstrap.min.js"></script>
+</head>
+
+<body>
+	
+<div id="wrapper">
+
+    <header>
+		<div class="top_bar"></div>
+		<div class="mid_container">
+			<div class="logo"><img src="i-takeaway%20logo.png" alt="Logo i-Takeaway"></div>
+		</div>
+	</header>
+
+    <nav class="areaf">What's available in your area?</nav>
+
+    <div id="main-body">
+        <div>
+            <form  method="get" action="restaurant-choice.html">			
+			<label class="labeltext" for="search_input"><p>Enter your postcode</p></label>
+                    <input type="search" id="search_input" class="search_input" size="50" placeholder="Type to search" name="postcode" required="true">
+					<label for="search_button" class="btn btn-square"><i class="glyphicon glyphicon-search symbol-style"></i></label>
+                    <input type="submit" id="search_button" value="Go" class="hidden">
+					
+            </form>
+            <ul id="postcode_list"><p>
+                <li>EC1A: Barbican, Clerkenwell, Finsbury</li>
+                <li>EC1M: Barbican, Clerkenwell, Finsbury</li>
+                <li>EC1N: Barbican, Clerkenwell, Finsbury</li>
+                <li>EC1P: Barbican, Clerkenwell, Finsbury</li>
+                <li>EC1R: Barbican, Clerkenwell, Finsbury</li>
+                <li>EC1V: Barbican, Clerkenwell, Finsbury</li>
+                <li>EC1Y: Barbican, Clerkenwell, Finsbury</li>
+                <li>EC2A: Moorgate, Liverpool Street</li>
+                <li>EC2M: Moorgate, Liverpool Street</li>
+                <li>EC2N: Moorgate, Liverpool Street</li>
+                <li>EC2P: Moorgate, Liverpool Street</li>
+                <li>EC2R: Moorgate, Liverpool Street</li>
+                <li>EC2V: Moorgate, Liverpool Street</li>
+                <li>EC2Y: Moorgate, Liverpool Street</li>
+                <li>EC3A: Aldgate, Monument, Tower Hill</li>
+                <li>EC3M: Aldgate, Monument, Tower Hill</li>
+                <li>EC3N: Aldgate, Monument, Tower Hill</li>
+                <li>EC3P: Aldgate, Monument, Tower Hill</li>
+                <li>EC3R: Aldgate, Monument, Tower Hill</li>
+                <li>EC3V: Aldgate, Monument, Tower Hill</li>
+                <li>EC4A: Fleet Street, St Paul's</li>
+                <li>EC4M: Fleet Street, St Paul's</li>
+                <li>EC4N: Fleet Street, St Paul's</li>
+                <li>EC4P: Fleet Street, St Paul's</li>
+                <li>EC4R: Fleet Street, St Paul's</li>
+                <li>EC4V: Fleet Street, St Paul's</li>
+                <li>EC4Y: Fleet Street, St Paul's</li>
+                <li>WC1A: Bloomsbury, Gray's Inn</li>
+                <li>WC1B: Bloomsbury, Gray's Inn</li>
+                <li>WC1E: Bloomsbury, Gray's Inn</li>
+                <li>WC1H: Bloomsbury, Gray's Inn</li>
+                <li>WC1N: Bloomsbury, Gray's Inn</li>
+                <li>WC1R: Bloomsbury, Gray's Inn</li>
+                <li>WC1V: Bloomsbury, Gray's Inn</li>
+                <li>WC1X: Bloomsbury, Gray's Inn</li>
+                <li>WC2A: Covent Garden, Holborn, Strand</li>
+                <li>WC2B: Covent Garden, Holborn, Strand</li>
+                <li>WC2E: Covent Garden, Holborn, Strand</li>
+                <li>WC2H: Covent Garden, Holborn, Strand</li>
+                <li>WC2N: Covent Garden, Holborn, Strand</li>
+                <li>WC2R: Covent Garden, Holborn, Strand</li>
+                <li>E1: Mile End, Stepney, Whitechapel</li>
+                <li>E2: Bethnal Green, Shoreditch</li>
+                <li>E3: Bow, Bromley-by-Bow</li>
+                <li>E4: Chingford, Highams Park</li>
+                <li>E5: Clapton</li>
+                <li>E6: East Ham, Beckton</li>
+                <li>E7: Forest Gate, Upton Park</li>
+                <li>E8: Hackney, Dalston</li>
+                <li>E9: Hackney, Homerton</li>
+                <li>E10: Leyton</li>
+                <li>E11: Leytonstone</li>
+                <li>E12: Manor Park</li>
+                <li>E13: Plaistow</li>
+                <li>E14: Isle of Dogs, Millwall, Poplar</li>
+                <li>E15: Stratford, West Ham</li>
+                <li>E16: Canning Town, North Woolwich</li>
+                <li>E17: Walthamstow</li>
+                <li>E18: South Woodford</li>
+                <li>E20: Olympic Park, Stratford</li>
+                <li>N1: Barnsbury, Canonbury, Islington</li>
+                <li>N2: East Finchley</li>
+                <li>N3: Finchley Central</li>
+                <li>N4: Finsbury Park, Manor House</li>
+                <li>N5: Highbury</li>
+                <li>N6: Highgate</li>
+                <li>N7: Holloway</li>
+                <li>N8: Crouch End, Hornsey</li>
+                <li>N9: Lower Edmonton</li>
+                <li>N10: Muswell Hill</li>
+                <li>N11: Friern Barnet, New Southgate</li>
+                <li>N12: North Finchley, Woodside Park</li>
+                <li>N13: Palmers Green</li>
+                <li>N14: Southgate</li>
+                <li>N15: Seven Sisters</li>
+                <li>N16: Stamford Hill, Stoke Newington</li>
+                <li>N17: Tottenham</li>
+                <li>N18: Upper Edmonton</li>
+                <li>N19: Archway, Tufnell Park</li>
+                <li>N20: Totteridge, Whetstone</li>
+                <li>N21: Winchmore Hill</li>
+                <li>N22: Alexandra Palace, Wood Green</li>
+                <li>NW1: Camden Town, Regent's Park</li>
+                <li>NW2: Cricklewood, Neasden</li>
+                <li>NW3: Hampstead, Swiss Cottage</li>
+                <li>NW4: Brent Cross, Hendon</li>
+                <li>NW5: Kentish Town</li>
+                <li>NW6: Kilburn, Queens Park, West Hampstead</li>
+                <li>NW7: Mill Hill</li>
+                <li>NW8: St John's Wood</li>
+                <li>NW9: Colindale, Kingsbury</li>
+                <li>NW10: Harlesden, Kensal Green, Willesden</li>
+                <li>NW11: Golders Green, Hampstead Garden Suburb</li>
+                <li>SE1: Bermondsey, Borough, Southwark, Waterloo</li>
+                <li>SE2: Abbey Wood</li>
+                <li>SE3: Blackheath, Westcombe Park</li>
+                <li>SE4: Brockley, Crofton Park, Honor Oak Park</li>
+                <li>SE5: Camberwell</li>
+                <li>SE6: Bellingham, Catford, Hither Green</li>
+                <li>SE7: Charlton</li>
+                <li>SE8: Deptford</li>
+                <li>SE9: Eltham, Mottingham</li>
+                <li>SE10: Greenwich</li>
+                <li>SE11: Lambeth</li>
+                <li>SE12: Grove Park, Lee</li>
+                <li>SE13: Hither Green, Lewisham</li>
+                <li>SE14: New Cross, New Cross Gate</li>
+                <li>SE15: Nunhead, Peckham</li>
+                <li>SE16: Rotherhithe, South Bermondsey, Surrey Docks</li>
+                <li>SE17: Elephant & Castle, Walworth</li>
+                <li>SE18: Plumstead, Woolwich</li>
+                <li>SE19: Crystal Palace, Upper Norwood</li>
+                <li>SE20: Anerley, Penge</li>
+                <li>SE21: Dulwich</li>
+                <li>SE22: East Dulwich</li>
+                <li>SE23: Forest Hill</li>
+                <li>SE24: Herne Hill</li>
+                <li>SE25: South Norwood</li>
+                <li>SE26: Sydenham</li>
+                <li>SE27: Tulse Hill, West Norwood</li>
+                <li>SE28: Thamesmead</li>
+                <li>SW1: Belgravia, Pimlico, Westminster</li>
+                <li>SW2: Brixton, Streatham Hill</li>
+                <li>SW3: Brompton, Chelsea</li>
+                <li>SW4: Clapham</li>
+                <li>SW5: Earl's Court</li>
+                <li>SW6: Fulham, Parson's Green</li>
+                <li>SW7: South Kensington</li>
+                <li>SW8: Nine Elms, South Lambeth</li>
+                <li>SW9: Brixton, Stockwell</li>
+                <li>SW10: West Brompton, World's End</li>
+                <li>SW11: Battersea, Clapham Junction</li>
+                <li>SW12: Balham</li>
+                <li>SW13: Barnes, Castelnau</li>
+                <li>SW14: East Sheen, Mortlake</li>
+                <li>SW15: Putney, Roehampton</li>
+                <li>SW16: Norbury, Streatham</li>
+                <li>SW17: Tooting</li>
+                <li>SW18: Earlsfield, Wandsworth</li>
+                <li>SW19: Merton, Wimbledon</li>
+                <li>SW20: Raynes Park, South Wimbledon</li>
+                <li>W1: Marylebone, Mayfair, Soho</li>
+                <li>W2: Bayswater, Paddington</li>
+                <li>W3: Acton</li>
+                <li>W4: Chiswick</li>
+                <li>W5: Ealing</li>
+                <li>W6: Hammersmith</li>
+                <li>W7: Hanwell</li>
+                <li>W8: Kensington</li>
+                <li>W9: Maida Vale, Warwick Avenue</li>
+                <li>W10: Ladbroke Grove, North Kensington</li>
+                <li>W11: Holland Park, Notting Hill</li>
+                <li>W12: Shepherd's Bush</li>
+                <li>W13: West Ealing</li>
+                <li>W14: West Kensington</li>
+                <li>BR: Bromley</li>
+                <li>CR: Croydon</li>
+                <li>DA: Dartford</li>
+                <li>EN: Enfield</li>
+                <li>HA: Harrow</li>
+                <li>IG: Ilford</li>
+                <li>KT: Kingston</li>
+                <li>RM: Romford</li>
+                <li>SM: Sutton</li>
+                <li>TW: Twickenham</li>
+                <li>UB: Uxbridge</li>
+                <li>WD: Watford</li>
+                <li>WD: Watford</li> </P>
+            </ul>
+        </div>
+        <img id="splash_img" src="splashpage.png" alt="Map">
+       <!-- <div class="map">Map</div> -->
+    </div>
+    
+	<div id="footer">
+		<div class="bottom_bar"></div>
+	</div>
+	
+</div>
+
+</body>
+
+<script>
+    function getQueryParams(qs) {
+        qs = qs.split("+").join(" ");
+        var params = {},
+                tokens,
+                re = /[?&]?([^=]+)=([^&]*)/g;
+
+        while (tokens = re.exec(qs)) {
+            params[decodeURIComponent(tokens[1])]
+                    = decodeURIComponent(tokens[2]);
+        }
+
+        return params;
+    }
+    var $_GET = getQueryParams(document.location.search);
+    var postcode = $_GET["postcode"];
+    if(postcode != undefined){
+        $('#search_input').val(postcode.toUpperCase());
+    }
+</script>
+
+<script>
+    $(function() {
+        var postcodes = $('#postcode_list li').map(function(){return $.text([this])});
+        postcodes = jQuery.makeArray( postcodes );
+        $( "#search_input" ).autocomplete({
+            response: function(event, ui) {
+                if (ui.content.length === 0) {
+                    $("#empty-message").text("No results found");
+                } else {
+                    $("#empty-message").empty();
+                }
+            },
+            source: postcodes,
+            change: function( event, ui ) {
+                val = $(this).val();
+                exists = $.inArray(val,postcodes);
+                if (exists<0) {
+                    $(this).val("");
+                    return false;
+                }
+            }
+        });
+    });
+</script>
+
+</html>
