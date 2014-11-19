@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<meta charset="utf-16">
+<html xmlns="http://www.w3.org/1999/html">
+<head>
+    <title>Usability pizza</title>
+    <!--Header links -->
+    <link rel="stylesheet" type="text/css" href="stylesheet.css">
+    <!-- jQuery -->
+    <script src="jquery.min.js"></script>
+    <!-- sort and filter -->
+    <script src="jquery.fastLiveFilter.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="bootstrap.min.css">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="bootstrap-theme.min.css">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="bootstrap.min.js"></script>
+</head>
+
+<body>
+
+<div id="wrapper">
+
+    <header>
+		<div class="top_bar"></div>
+		<div class="mid_container">
+		<a href="index.html">
+			<div class="logo"><img src="i-takeaway%20logo.png" alt="Logo i-Takeaway"></div>
+			</a>
+		</div>
+	</header>
+
+	<nav><span id="postcode-display">Please enter postcode</span>
+		<form  method="get" action="index.html">
+			<input type="hidden" name="postcode" id="postcode" value="">
+			<input class="button" type="submit" value="Re-enter postcode">
+			
+		</form>
+	</nav>
+
+	<form class="searchbox" method="get">
+
+		<label class="labeltext" for="search_input">Refine your search with keywords</label>
+		<input class="search_box search_input" type="search" id="search_input" placeholder="Type to filter" name="restaurant">
+	<!--	<input class="search_button" type="submit"> -->
+	</form>
+	
+	<!-- this the line bellow the search box*/ -->
+	<div class="borderline1"> </div> 
+	<span class="orline"> OR </span> 
+	<div class="borderline2"></div><br>
+	
+	<!-- this the line bellow the search box*/ -->
+	<br><div class="borderline3"> </div> 
+	<span class="selectline"> Select an option </span> 
+	<div class="borderline4"></div> 
+
+	<ul id="restaurant_list"><p>
+		<li><a href="#" onclick="copyToText(this,0);">
+			<img src="azure%20tiger.png">
+			Azure Tiger (Indian)
+			<button type='button' class='btn li_btn' id='li_btn1'>Menu</button>
+		</a></li><br>
+		<li><a href="#" onclick="copyToText(this,1);">
+			<img src="pizzeria.png">
+			Mama's Pizzeria (Italian)
+			<button type='button' class='btn li_btn' id='li_btn2'>Menu</button>
+		</a></li><br>
+		<li><a href="#" onclick="copyToText(this,2);">
+			<img src="sushibox.png">
+			Sushibox (Japanese)
+			<button type='button' class='btn li_btn' id='li_btn3'>Menu</button>
+		</a></li><br>
+		<li><a href="#" onclick="copyToText(this,3);">
+			<img src="wok.png">
+			Vermillion Takeaway (Chinese)
+			<button type='button' class='btn li_btn' id='li_btn4'>Menu</button>
+		</a></li><br>
+	</p></ul>
+   
+	<div id="footer"></div>
+	
+</body>
+
+
+<script>
+/*disable recognition of enter key for searchbox*/
+$(document).ready(function() {
+        $("form").bind("keypress", function(e) {
+            if (e.keyCode == 13) {
+                return false;
+            }
+        });
+    });
+	
+$(function () {
+	$('#search_input').fastLiveFilter('#restaurant_list');
+});
+</script>
+
+<script>
+    function getQueryParams(qs) {
+        qs = qs.split("+").join(" ");
+        var params = {},
+                tokens,
+                re = /[?&]?([^=]+)=([^&]*)/g;
+
+        while (tokens = re.exec(qs)) {
+            params[decodeURIComponent(tokens[1])]
+                    = decodeURIComponent(tokens[2]);
+        }
+
+        return params;
+    }
+
+    var $_GET = getQueryParams(document.location.search);
+    var postcode = $_GET["postcode"];
+    if(postcode != undefined) {
+        $('#postcode').val(postcode.toUpperCase());
+        postcode = "Current Postcode: " + postcode.split(":")[0];
+        $('#postcode-display').text(postcode);
+    }
+    var restaurant = $_GET["restaurant"];
+    if(restaurant != undefined) {
+        $('#search_input').val(restaurant);
+    }
+</script>
+
+<script>
+    function copyToText(listele,menuSet) {
+        var restaurant= listele.text.replace(/^\s+|\s+$/g, '');
+		restaurant = restaurant.replace('Menu', '');
+        //$('#search_input').val(restaurant
+		
+		switch (menuSet){
+		case 0:
+			window.location.href = "indian.html?restaurant=" + restaurant;
+			break;
+		case 1:
+		    window.location.href = "Italian.html?restaurant=" + restaurant;
+			break;
+		case 2:
+		    window.location.href = "japanese.html?restaurant=" + restaurant;
+			break;
+		case 3:
+		    window.location.href = "chinese.html?restaurant=" + restaurant;
+			break;
+		}
+    }
+
+</script>
+</html>
