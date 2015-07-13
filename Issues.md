@@ -1,0 +1,14 @@
+# Introduction #
+
+Please write about all issues you find here. Inklude which section (JS/CSS/HTML) and which file is affected.
+
+
+# 1 Postcodes #
+
+List of Postcodes like a google search box. The preview should be about 5 items. The items should be clickable and then the post code should fill out the input form. If you hit enter it should go to restaurant.html
+
+http://designshack.net/articles/javascript/create-a-simple-autocomplete-with-html5-jquery/
+
+http://designshack.net/tutorialexamples/html5-autocomplete-suggestions/
+
+# 2 #

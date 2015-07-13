@@ -1,0 +1,15 @@
+# Introduction #
+
+Here are some options for the search function:
+
+
+# Details #
+
+https://github.com/Rufus125/jquery.livefilter
+demo: https://cheeaun.github.io/jquery.livefilter/
+
+http://anthonybush.com/projects/jquery_fast_live_filter/
+demo: http://anthonybush.com/projects/jquery_fast_live_filter/demo/
+
+http://www.designchemical.com/blog/index.php/jquery/live-text-search-function-using-jquery/
+demo: http://www.designchemical.com/lab/jquery/demo/jquery_demo_live_comment_search.htm
